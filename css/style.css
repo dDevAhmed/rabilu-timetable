@@ -1,0 +1,71 @@
+
+.topbar{
+position: fixed;
+font-size: 35;
+left: 0px;
+top: 0px;
+font-family: arial;
+width: 100%;
+height: 3.5em;
+border: 1px solid #cccccc;
+font-weight: bolder;
+z-index: 2;
+background: #f1f1f1;
+border: none;
+}
+
+.aside{
+position: fixed;
+font-size: 20;
+left: 0px;
+top: 5em;
+font-family: 'arial';
+width: 13em;
+height: 100%;
+border: 1px solid #cccccc;
+font-weight: bolder;
+background: #7f9ea0;
+border: none;
+z-index: 1;
+}
+
+.dangermsg{
+position: relative;
+width: 50%;
+height: 4em;
+background: rgba(255, 0, 0, 0.2);
+font-weight: bold;
+justify-content: center;
+align-items: center;
+display: flex;
+display: -webkit-flex;
+display: -moz-flex;
+color:#ff0000;
+border: none;
+border-radius: 3px;
+z-index: 5;
+
+}
+
+
+.successmsg{
+position: relative;
+width: 50%;
+height: 4em;
+background: rgba(76, 175, 80, 0.5);
+font-weight: bold;
+justify-content: center;
+align-items: center;
+display: flex;
+display: -webkit-flex;
+display: -moz-flex;
+color:#006666;
+border: none;
+border-radius: 3px;
+z-index: 3;
+}
+
+
+
+
+
