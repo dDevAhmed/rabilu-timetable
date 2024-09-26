@@ -30,33 +30,88 @@ $scheduled = mysqli_num_rows($updateprpfile);
     <script src="./bootstrap/js/response.js"></script>
     <script language="javascript" src="./js/jquery-3.1.1.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="./css/adminpage.css"> -->
+    <style>
+        body {
+            width: 100%;
+        }
+
+        nav.navbar {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                a {
+                    color: #357bf5;
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+            }
+        }
+        span.row{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 15px;
+            background: #fff;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            background: #000;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            color: white;
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body>
+    <nav class="navbar">
+        <img src="img/2.jpeg" style="height: 60px;">
+        <span>
+            <a href="#" onclick="window.location.href='rescheduleexams.php'">RE-SCHEDULE EXAMS</a>
+            <a href="#" onclick="window.location.href='adminlogout.php'">LOGOUT</a>
+        </span>
 
-    <img src="img/1.jpeg" style="width: 100%; height: 100%; position: fixed; top: 0px; opacity: 1;">
+    </nav>
     <center>
-        <img src="img/2.jpeg" style="float: left; width: 8em; height: 8em; position: relative; z-index:6; margin-left: 3em; margin-top: -10em;  border-radius: 100%; ">
-        <span onclick="window.location.href='adminlogout.php'" style="float: right;  position: relative; margin-left: 3em; margin-top: -9em; padding: 10px; margin-right: 2em; "><b>LOGOUT</b></span>
-        <span onclick="window.location.href='rescheduleexams.php'" style="float: right;  position: relative; margin-left: 3em; margin-top: -9em; padding: 10px; margin-right: 8em; "><b>RE-SCHEDULE EXAMS</b></span>
+        <div style="width: 60em; background: #357bf5; position: relative;  z-index: 0; top: 0em; border-radius: 5px; padding: 30px;"><br><br>
+            <span style="font-size: 20;  color: #000; font-weight: bold;">SCHEDULE EXAM FOR STUDENT </span><br><br>
+            <span class="row">
+                <input type="text" id="course" placeholder="Enter Exam Course">
+                <input type="text" id="venue" placeholder="Enter Exam Venue">
+            </span>
+            <span class="row">
+                <input type="text" id="date" placeholder="Enter Exam Date">
+                <input type="text" id="time" placeholder="Enter Exam Time">
+            </span>
+            <span class="row"><input type="text" id="day" placeholder="Enter Exam Day"></span>
+            <span class="row">
+                <input type="number" id="from" placeholder="Student From">
+                <input type="number" id="to" placeholder="Student To">
+            </span>
 
-        <h4 id="success" style="z-index: 5; margin-left: -2em; margin-top: 8em; "></h4>
-    </center>
-    <center>
-        <div style="width: 60em; height: 30em; background: #7f9ea0; position: relative;  z-index: 0; top: 0em; border-radius: 5px; "><br><br>
-            <span style="font-size: 20;  color: #000; font-weight: bold; ">SCHEDULE EXAM FOR STUDENT </span><br><br>
-            <input type="text" id="course" placeholder="Enter Exam Course" style="width: 27em; height: 3em; margin-left: 2em; float: left; background: #ffffff; outline: none; border-radius: 5px;">
-            <input type="text" id="venue" placeholder="Enter Exam Venue" style="width: 27em; height: 3em; margin-right: 2em; float: right; background: #ffffff; outline: none; border-radius: 5px;"><br><br><br>
-            <input type="text" id="date" placeholder="Enter Exam Date" style="width: 27em; height: 3em; margin-left: 2em; float: left; background: #ffffff; outline: none; border-radius: 5px;">
-            <input type="text" id="time" placeholder="Enter Exam Time" style="width: 27em; height: 3em; margin-right: 2em; float: right; background: #ffffff; outline: none; border-radius: 5px;"><br><br><br>
-            <input type="text" id="day" placeholder="Enter Exam Day" style="width: 27em; height: 3em; margin-left: 2em; float: left; background: #ffffff; outline: none; border-radius: 5px;">
-            <input type="number" id="from" placeholder="Student From" style="width: 12em; height: 3em; margin-left: 2em; float: left; background: #ffffff; outline: none; border-radius: 5px;">
-            <input type="number" id="to" placeholder="Student To" style="width: 12em; height: 3em; margin-left: 2em; float: left; background: #ffffff; outline: none; border-radius: 5px;">
-
-            <br><br><br>
             <input type="text" value="Student scheduled for exam: <?php echo $scheduled; ?> of <?php echo $notscheduled; ?>" style="width: 27em; font-weight: bold; height: 3em; margin-left: 2em; background: #ffffff; outline: none; border-radius: 5px;" readonly>
-            <br><br>
-            <input type="button" value="SCHEDULE EXAM" onclick="schedulexam();" style="width: 20%; height: 3em; background: #000; color:#ffffff;  outline: none; border-radius: 5px; border: none;">
+            <button type="button" value="SCHEDULE EXAM" onclick="schedulexam();" style="width: 20%; height: 3em; background: #000; color:#ffffff;  outline: none; border-radius: 5px; border: none; display: block;">Schedule Exam</button>
         </div>
     </center>
 

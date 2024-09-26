@@ -1,0 +1,21 @@
+body{
+    width: 100%;
+}
+
+nav.navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border:1px solid red;
+
+    span{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        a{
+            color: #357bf5;
+            text-decoration: none;
+        }
+    }
+}
